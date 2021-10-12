@@ -1,38 +1,197 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;}
+
+.app {
+    height: 100vh;
+    display: flex;
+    background-color: #020230;
+    color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230), url(./assets/bg.jpg) bottom no-repeat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top {
+    height: 30%;
+    position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.bottom {
+    height: 50%; 
 }
 
-.App-link {
-  color: #61dafb;
+.timer {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    top: 10%;
+    left: 10%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.usernameContainer {
+    position: absolute;
+    width: 50%;
+    height: 70px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    top: 10%;
+    right: 10%; 
+}
+
+.pyramid {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moneyList {
+    list-style: none;
+    width: 100%;
+    padding: 20px;
+}
+
+.moneyListItem {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.moneyListItem.active {
+    background-color: teal;
+    font-weight: 900;
+}
+
+.moneyListItemNumber {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.moneyListItem.active span.moneyListItemNumber {
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.moneyListItemAmount {
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.moneyListItem.active span.moneyListItemAmount {
+    font-weight: 900;
+    font-size: 28px;
+}
+
+.gameOver {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.gameOverText {
+    font-size: 60px;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px black;
+    text-align: center;
+}
+
+.gameOverTryAgain {
+    width: 70%;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px 10px 20px;
+    transition: 0.3s ease;
+    border-radius: 50px;
+}
+
+.gameOverTryAgain:hover {
+    transform: scale(1.1);
+}
+
+/* ========== MEDIQUERIES ========== */
+
+/* SMARTPHONE */
+
+@media screen and (max-width: 760px) {
+    .app {
+        height: 100vh;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #020230), url(./assets/bg-phone.jpg) center no-repeat;
+    }    
+    .top {
+        height: 20%;
+        position: relative;
+    }    
+    .bottom {
+        height: 50%; 
+    }
+    .pyramid {
+        height: 100vh;
+    }
+    .timer {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 5px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }
+    .usernameContainer {
+        position: absolute;
+        text-transform: uppercase;
+        width: 30%;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        font-weight: 700;
+        top: 5%;
+        right: 10%;            
+    }
+    .moneyListItemNumber {
+        display: none;
+    }
+    .gameOver {
+        margin-top: 25%;
+    }
+    .gameOverTryAgain {
+        width: 70%;
+    }
 }

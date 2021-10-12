@@ -1,0 +1,26 @@
+@media (min-width: 320px) and (max-width: 480px) {
+    .visit-me {
+        display: none !important;
+      }
+}
+
+.visit-me {
+    position: absolute;
+    bottom: 5%;
+  }
+
+  .visit-me-link {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Spartan", sans-serif !important;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in;
+  }
+
+  .visit-me-link:hover {
+    padding-left: 30px;
+  }
